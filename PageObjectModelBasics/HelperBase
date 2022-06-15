@@ -80,30 +80,6 @@ public class HelperBase {
 //    public String weToasterMessage;
 
 
-    @Value("${btnYes}")
-    public String btnYes;
-
-    @Value("${txt_fieldErrorMessage}")
-    public String txt_fieldErrorMessage;
-
-    @Value("${btnAdd}")
-    public String btnAdd;
-
-    @Value("${table}")
-    public String table;
-
-    @Value("${btnSave}")
-    public String btnSave;
-
-    @Value("${lnkReportError}")
-    public String lnkReportError;
-
-    @Value("${lnkcrystalReportError}")
-    public String lnkcrystalReportError;
-
-    @Value("${btnExportCrystalReport}")
-    public String btnExportCrystalReport;
-
     @Value("${btnHelp}")
     public String btnHelp;
 
