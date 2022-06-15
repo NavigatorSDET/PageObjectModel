@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+      http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"
+       default-autowire="byName">
+
+    <context:annotation-config/>
+    <context:property-placeholder location="classpath:locators/*.properties" ignore-resource-not-found="true"/>
+
+
+
+    <bean id="applicationManager" class="appmanager.ApplicationManager"/>
+    <bean id="helperBase" class="appmanager.HelperBase"/>
+
+
+    <!-- Database connection bean classes which implements JdbcTemplate class-->
+
+    <bean id="myJdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="appdataSource"/>
+    </bean>
+
+    <bean id="MaintenanceDAO" class="APPDAO.MaintenanceDAO">
+        <constructor-arg ref="myJdbcTemplate"/>
+    </bean>
+
+
+    <!-- Database connections which can be accessed by defining the profile name in TestBase class -->
+    <beans profile="DB1">
+        <bean id="appdataSource" class="org.apache.commons.dbcp2.BasicDataSource">
+            <property name="driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
+            <property name="url" value="jdbc:sqlserver://......; databaseName=....."/>
+            <property name="username" value="..........."/>
+            <property name="password" value="..........."/>
+            <property name="initialSize" value="2"/>
+            <property name="maxTotal" value="10"/>
+        </bean>
+    </beans>
+
+    <beans profile="DB2">
+        <bean id="appdataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+            <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
+<!--            <property name="url" value="jdbc:oracle:thin:@......................................."/>-->
+            <property name="url" value="jdbc:oracle:thin:@........................................."/>
+            <property name="username" value="..........."/>
+            <property name="password" value="......................"/>
+        </bean>
+    </beans>
+
+
+    <beans profile="DB3">
+        <bean id="...dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
+            <property name="driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
+            <property name="url" value="jdbc:sqlserver://............"/>
+            <property name="username" value="........"/>
+            <property name="password" value="............"/>
+            <property name="initialSize" value="2"/>
+            <property name="maxTotal" value="10"/>
+        </bean>
+    </beans>
+</beans>
