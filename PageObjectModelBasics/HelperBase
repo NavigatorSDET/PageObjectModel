@@ -46,7 +46,7 @@ import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
 
-import static APPPages.TradeCapture.AdvancePositivePage.removeZeroesAppended;
+import static APPPages..;
 import static appmanager.ApplicationManager.*;
 import static appmanager.ExtentCucumberFormatter.*;
 import static org.openqa.selenium.By.xpath;
@@ -80,22 +80,6 @@ public class HelperBase {
 //    public String weToasterMessage;
 
 
-    @Value("${breadcrumbE}")
-    public String breadcrumbE;
-
-    @Value("${weEllipse}")
-    public String weEllipse;
-
-    @Value("${drpShow}")
-    public String drpShow;
-
-    @Value("${weCloseWindow}")
-    public String weCloseWindow;
-
-
-    @Value("${lnkHelp}")
-    public String lnkHelp;
-
     @Value("${btnYes}")
     public String btnYes;
 
@@ -119,119 +103,6 @@ public class HelperBase {
 
     @Value("${btnExportCrystalReport}")
     public String btnExportCrystalReport;
-
-    @Value("${btnUpdate}")
-    public String btnUpdate;
-
-    @Value("${btnDelete}")
-    public String btnDelete;
-
-    @Value("${btnCancel}")
-    public String btnCancel;
-
-    @Value("${btnSearch}")
-    public String btnSearch;
-
-    @Value("${btnReset}")
-    public String btnReset;
-
-    @Value("${btnCSV}")
-    public String btnCSV;
-
-    @Value("${btnXLS}")
-    public String btnXLS;
-
-    @Value("${btnPDF}")
-    public String btnPDF;
-
-    @Value("${btnRefresh}")
-    public String btnRefresh;
-
-    @Value("${lnkFirstPage}")
-    public String lnkFirstPage;
-
-    @Value("${lnkPreviousPage}")
-    public String lnkPreviousPage;
-
-    @Value("${lnkNextPage}")
-    public String lnkNextPage;
-
-    @Value("${lnkLastPage}")
-    public String lnkLastPage;
-
-
-    @Value("${drpShowEntry}")
-    public String drpShowEntry;
-
-    @Value("${wesBreadCumb}")
-    public String wesBreadCumb;
-
-    @Value("${webreadcrumb}")
-    public String webreadcrumb;
-
-    @Value("${weRecordCount}")
-    public String weRecordCount;
-
-    @Value("${weToastMessage}")
-    public String weToastMessage;
-
-
-    @Value("${btnDeleteConfirm}")
-    public String btnDeleteConfirm;
-
-    @Value("${btnDeleteCancel}")
-    public String btnDeleteCancel;
-
-    @Value("${btnCancelPopup}")
-    public String btnCancelPopup;
-
-    @Value("${btnClosePopUp}")
-    public String btnClosePopUp;
-
-    @Value("${btnSaveAd}")
-    public String btnSaveAd;
-
-    @Value("${lstFileFormat}")
-    public String lstFileFormat;
-
-    @Value("${wePDFFormat}")
-    public String wePDFFormat;
-
-    @Value("${weXLSFormat}")
-    public String weXLSFormat;
-
-    @Value("${weCSVFormat}")
-    public String weCSVFormat;
-
-    @Value("${lnkExport}")
-    public String lnkExport;
-
-    @Value("${btnLogin}")
-    public String btnLogin;
-
-    @Value("${txtUsername}")
-    public String txtUsername;
-
-    @Value("${txtPassword}")
-    public String txtPassword;
-
-    @Value("${weLoginError}")
-    public String weLoginError;
-
-    @Value("${weLoginUserText}")
-    public String weLoginUserText;
-
-    @Value("${btnOk}")
-    public String btnOk;
-
-    @Value("${invalidusertext}")
-    public String invalidusertext;
-
-    @Value("${invalidpasstext}")
-    public String invalidpasstext;
-
-    @Value("${invalidLogin}")
-    public String invalidLogin;
 
     @Value("${btnHelp}")
     public String btnHelp;
@@ -554,11 +425,6 @@ public class HelperBase {
             testStepFailed("Unable to Click on Element- " + elemName);
         }
     }
-
-
-
-
-
 
 
     public static void type(String object, String data) {
